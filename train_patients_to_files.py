@@ -13,7 +13,7 @@ for t in train:
     id = t['Id']
     patient_studies = sorted(glob("./res_dicom2nifti" + '/' + id + '/*' + '/*'))
     for dir in patient_studies:
-        new_train.append({'nii' : dir, 'ground_truth': t['ground_truth']})
+        new_train.append({'nii': dir, 'ground_truth': t['ground_truth']})
 
 csv_info = ['nii', 'ground_truth']
 with open('new_train.csv', 'w') as csvfile:

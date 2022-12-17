@@ -1,6 +1,5 @@
 import csv
 import math
-import sys
 import itertools
 import scipy.stats
 import numpy as np

@@ -32,7 +32,7 @@ for n in range(len(relative_types) + 1):
     all_relative_type_combinations += list(itertools.combinations(relative_types, n))
 
 score_dicts = []
-for degree in range(2, 6):
+for degree in range(2, 4):
     for place in places:
 
         if place != 'random_point':

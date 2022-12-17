@@ -1,10 +1,8 @@
 import os
-import sys
 from glob import glob
 import nibabel as nib
 import random
 import csv
-import math
 from datetime import datetime
 import statistics
 
@@ -36,8 +34,8 @@ if __name__ == '__main__':
         for nii in list_of_nii:
             print("Patient", file_struct[2], "| Analyzing the file", nii, "|", datetime.now().strftime("%H:%M:%S"))
             t1_img = nib.load(os.path.join("./res_mask", file_struct[2], file_struct[3], nii + "-livermask2.nii"))
-            t2_img = nib.load(os.path.join(file, nii))
             t1_data = t1_img.get_fdata()
+            t2_img = nib.load(os.path.join(file, nii))
             t2_data = t2_img.get_fdata()
 
             rand_z = random.randint(0, t1_data.shape[0] - 1)
