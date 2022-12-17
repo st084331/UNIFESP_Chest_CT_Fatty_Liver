@@ -2,6 +2,8 @@ import csv
 import sklearn.metrics
 import math
 import sklearn
+from datetime import datetime
+
 
 places = ['whole_liver', 'one_area', 'two_areas', 'three_areas', 'random_points', 'random_point']
 score_dicts = []
@@ -125,6 +127,7 @@ for place in places:
                 border_point = rightmost_point
             else:
                 border_point = leftmost_point
+            print(place, type ,border_point, i, datetime.now().strftime("%H:%M:%S"))
 
             for j in range(1, 31):
                 test = []
