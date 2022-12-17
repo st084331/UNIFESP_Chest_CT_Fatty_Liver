@@ -5,12 +5,10 @@ from glob import glob
 import livermask.livermask
 
 input_dir = './res_dicom2nifti'
+vessels = False
+verbose = False
+cpu = True
 
-"""
-First, we split all patients between Chest and Abdomen. 
-We get this information by iterating through the exam directories, opening a dicom file 
-and reading the Study Description Tag. 
-"""
 if __name__ == '__main__':
     try:
         os.mkdir(os.path.join('./res_mask'))
@@ -33,4 +31,4 @@ if __name__ == '__main__':
             print('Study dir exists')
 
         for nii in list_of_nii:
-            livermask.livermask.func(os.path.abspath(os.path.join(file, nii)), os.path.abspath(os.path.join('./res_mask', file_struct[2], file_struct[3], nii)), True, False, False)
+            livermask.livermask.func(os.path.abspath(os.path.join(file, nii)), os.path.abspath(os.path.join('./res_mask', file_struct[2], file_struct[3], nii)), cpu, verbose, vessels)
