@@ -1,4 +1,3 @@
-""" Import packages """
 import os
 from glob import glob
 
@@ -20,7 +19,7 @@ if __name__ == '__main__':
 
         # Here we iterate through each series directory (the last subdirectory) and read the first dicom file
         # (doesn't matter which one you read). We stop before the pixel array, so the process takes less time.
-        file_struct=file.split('/')
+        file_struct = file.split('/')
         try:
             os.mkdir(os.path.join('./res_mask', file_struct[2]))
         except:
@@ -31,4 +30,6 @@ if __name__ == '__main__':
             print('Study dir exists')
 
         for nii in list_of_nii:
-            livermask.livermask.func(os.path.abspath(os.path.join(file, nii)), os.path.abspath(os.path.join('./res_mask', file_struct[2], file_struct[3], nii)), cpu, verbose, vessels)
+            livermask.livermask.func(os.path.abspath(os.path.join(file, nii)),
+                                     os.path.abspath(os.path.join('./res_mask', file_struct[2], file_struct[3], nii)),
+                                     cpu, verbose, vessels)

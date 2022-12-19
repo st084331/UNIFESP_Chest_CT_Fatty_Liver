@@ -93,7 +93,8 @@ for place in places:
                 log_loss = sklearn.metrics.log_loss(y_real, y_pred)
                 r2 = sklearn.metrics.r2_score(y_real, y_pred)
 
-                score_dicts.append({'place': place, 'type': type, 'train': i, 'test': j, 'log_loss': log_loss, 'r2': r2})
+                score_dicts.append(
+                    {'place': place, 'type': type, 'train': i, 'test': j, 'log_loss': log_loss, 'r2': r2})
 
 sorted_dicts = sorted(score_dicts, key=lambda d: d['r2'])
 

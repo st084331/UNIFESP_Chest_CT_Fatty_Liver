@@ -4,9 +4,7 @@ from sklearn.linear_model import LinearRegression
 from datetime import datetime
 import sklearn
 import itertools
-
 from sklearn.preprocessing import PolynomialFeatures
-
 
 places = ['random_point', 'whole_liver', 'one_area', 'two_areas', 'three_areas', 'random_points']
 
@@ -152,8 +150,6 @@ for degree in range(2, 4):
                                             'type_3': current_types_for_dict[2],
                                             'type_4': current_types_for_dict[3], 'type_5': current_types_for_dict[4],
                                             'train': k, 'test': j, 'log_loss': log_loss_score, 'r2': r2_score})
-
-
 
     sorted_score = sorted(score_dicts, key=lambda d: d['r2'])
 

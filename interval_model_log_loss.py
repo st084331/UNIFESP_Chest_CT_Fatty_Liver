@@ -150,7 +150,7 @@ for place in places:
 
                 score = math.fabs(sklearn.metrics.log_loss(y_real, y_pred))
 
-                score_dicts.append({'place': place, 'type': type, 'train': i, 'test': j, 'score': score,
+                score_dicts.append({'place': place, 'type': type, 'train': i, 'test': j, 'log_loss': score,
                                     'border_point': border_point})
 
 sorted_dicts = sorted(score_dicts, key=lambda d: d['score'])

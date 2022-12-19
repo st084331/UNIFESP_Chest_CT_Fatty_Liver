@@ -227,9 +227,10 @@ if __name__ == '__main__':
             whole_liver_nii_dicts_quantiles.append(
                 {'nii': os.path.join(file, nii), '1': whole_liver_quantiles[0], '2': whole_liver_quantiles[1],
                  '3': whole_liver_quantiles[2]})
-            whole_liver_nii_dicts.append({'nii': os.path.join(file, nii), 'mean': statistics.mean(whole_liver_list_of_brightness),
-                                   'median': statistics.median(whole_liver_list_of_brightness),
-                                   'mode': statistics.mode(whole_liver_list_of_brightness)})
+            whole_liver_nii_dicts.append(
+                {'nii': os.path.join(file, nii), 'mean': statistics.mean(whole_liver_list_of_brightness),
+                 'median': statistics.median(whole_liver_list_of_brightness),
+                 'mode': statistics.mode(whole_liver_list_of_brightness)})
 
             print("File", nii, "parsed successfully", "|", datetime.now().strftime("%H:%M:%S"))
 
